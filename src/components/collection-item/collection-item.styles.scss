@@ -1,0 +1,29 @@
+.collection-item{
+    width : 12rem;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 1rem;
+    animation: upwards 1000ms 1s ease-in;
+
+    .image{
+    height : 19rem;
+    width : 12rem;
+    background-position: center;
+    background-size: cover; 
+    border : 1px solid grey;
+    }
+    
+
+    @keyframes upwards {
+        0%{
+            opacity: 0;
+            transform: translateX(-100%);
+        }
+        100%{
+            opacity: 1;
+            transform: translateX(0%);
+        }        
+    }
+    
+
+}
