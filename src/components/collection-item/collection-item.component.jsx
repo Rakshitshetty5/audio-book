@@ -2,8 +2,7 @@ import React from 'react';
 
 import './collection-item.styles.scss';
 
-const CollectionItem = ( {book }) => {
-    const { id, img_url } = book
+const CollectionItem = ( {img_url} ) => {
     return(
         <div className="collection-item">
             <div className="image" 

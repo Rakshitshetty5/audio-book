@@ -3,34 +3,23 @@
     flex-direction: column;
     margin-bottom : 2rem;
 
-    .genre{
-        font-size: 1.5rem;
-        margin-bottom : 1.5rem;
+    .collection-preview__head{
+        display: flex;
+        justify-content: space-between;
+        
+        .genre{
+            font-size: 1.5rem;
+            color:  #fff;
+            margin-bottom : 1.5rem;
+        }
+        .extra{
+            color : #FF5909
+        }
+    
     }
 
     .preview{
         display: flex;
         overflow-x: scroll;
-
-        /*To hide scroll bar styles*/ 
-        ::-webkit-scrollbar {
-            width: 0.3px;
-            
-          }
-          
-          /* Track */
-        ::-webkit-scrollbar-track {
-            background: #fff;
-          }
-           
-          /* Handle */
-        ::-webkit-scrollbar-thumb {
-            background: #fff; 
-          }
-          
-          /* Handle on hover */
-        ::-webkit-scrollbar-thumb:hover {
-            background: #fff; 
-          }
     }
 }

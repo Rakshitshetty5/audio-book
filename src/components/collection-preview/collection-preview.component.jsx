@@ -7,14 +7,19 @@ import CollectionItem from '../collection-item/collection-item.component'
 
 const CollectionPreview = ({genre, books}) => (
     <div className="collection-preview">
-        <h1 className="genre">
-            {genre.toUpperCase()}
-        </h1>
+        <div className="collection-preview__head">
+            <h1 className="genre">
+                {genre.toUpperCase()}
+            </h1>
+            <h4 className="extra">
+                View More >
+            </h4>
+        </div>
         <div className="preview">
             {   //filter is used for future when data increases
                 books.filter((book,idx) => idx < 6)
                 .map((book) => (
-                    <CollectionItem key = {book.id} book = {book} />
+                    <CollectionItem key = {book.id} img_url = {book.img_url} />
                 ))
             }
         </div>

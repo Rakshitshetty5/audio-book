@@ -5,9 +5,31 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: #393939;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+ /*To add custom scroll bar styles*/ 
+ ::-webkit-scrollbar {
+  width: 0.3px;
+  
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #393939;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #393939;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #393939;
 }

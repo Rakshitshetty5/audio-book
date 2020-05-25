@@ -1,6 +1,6 @@
-const AUDIO_DATA = [
+const AUDIO_DATA = {
 
-    {
+   romance : {
         genre : 'Romance',
         id : 0,
         books : [
@@ -268,7 +268,7 @@ const AUDIO_DATA = [
             },
         ]
     },
-    {
+    literary : {
         genre : 'Literary',
         id : 1,
         books : [
@@ -471,7 +471,7 @@ const AUDIO_DATA = [
             
         ]
     },
-    {
+    history :{
         genre : 'History',
         id : 2,
         books : [
@@ -551,7 +551,7 @@ const AUDIO_DATA = [
             
         ]
     },
-    {
+    adventure :{
         genre : 'Adventure',
         id : 3,
         books : [
@@ -614,6 +614,6 @@ const AUDIO_DATA = [
         ]
     },
 
-]
+}
 
 export default AUDIO_DATA;

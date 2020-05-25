@@ -2,7 +2,7 @@ import AUDIO_DATA from './audio.data.js';
 
 
 const INITIAL_STATE = {
-    collection : AUDIO_DATA
+    collections : AUDIO_DATA
 }
 
 // as we dont have any action initial state will only be returned
