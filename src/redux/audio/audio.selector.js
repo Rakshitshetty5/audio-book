@@ -1,7 +1,17 @@
 import { createSelector } from 'reselect';
 
 //entire data
-const dataSelect = state => state.audio //(audio is specisifies in root-reducer)
+const dataSelect = state => {
+    console.log(state)
+    return state.audio
+} //(audio is specisified in root-reducer)
+
+export const getId = createSelector(
+    [dataSelect],
+    audio => audio.book_id
+) 
+
+
 
 // individual genre
 export const dataGenereSelect = createSelector(
@@ -16,9 +26,12 @@ const dataiwant = createSelector(
 
 
 */
-
-
 export const dataGenereSelectForPreview = createSelector(
     [dataGenereSelect],
     collections => Object.keys(collections).map(key => collections[key])
 )
+/*
+export const getBook = createSelector(
+    [getId],
+)
+*/

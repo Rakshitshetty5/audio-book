@@ -5,7 +5,8 @@ import './collection-preview.styles.scss';
 import CollectionItem from '../collection-item/collection-item.component'
 
 
-const CollectionPreview = ({genre, books}) => (
+
+const CollectionPreview = ({genre, books, showBook}) => (
     <div className="collection-preview">
         <div className="collection-preview__head">
             <h1 className="genre">
@@ -19,12 +20,14 @@ const CollectionPreview = ({genre, books}) => (
             {   //filter is used for future when data increases
                 books.filter((book,idx) => idx < 6)
                 .map((book) => (
-                    <CollectionItem key = {book.id} img_url = {book.img_url} />
+                    <CollectionItem key = {book.id} img_url = {book.img_url} id = {book.id} />
                 ))
             }
         </div>
     </div>
 )
+
+
 
 
 export default CollectionPreview
