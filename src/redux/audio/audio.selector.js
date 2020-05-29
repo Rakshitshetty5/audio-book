@@ -6,9 +6,10 @@ const dataSelect = state => {
     return state.audio
 } //(audio is specisified in root-reducer)
 
-export const getId = createSelector(
+const getId = createSelector(
     [dataSelect],
-    audio => audio.book_id
+    audio => { console.log(audio.book_id)
+        return audio.book_id}
 ) 
 
 
@@ -18,20 +19,18 @@ export const dataGenereSelect = createSelector(
     [dataSelect],
     audio => audio.collections
 )
-/*
-const dataiwant = createSelector(
-    [dataGenereSelect],
-    collections => Object.keys(collections).map(collections => collections.books.map()
-)
 
-
-*/
 export const dataGenereSelectForPreview = createSelector(
     [dataGenereSelect],
-    collections => Object.keys(collections).map(key => collections[key])
+    collections => Object.keys(collections).map(key => 
+       collections[key])
 )
-/*
-export const getBook = createSelector(
-    [getId],
+
+export const returnBook = createSelector(
+    dataGenereSelectForPreview,
+    getId,
+    (collection, book_id) => collection.map(item => item.books).map(book => book.filter(el => el.id === book_id))
 )
-*/
+
+
+
