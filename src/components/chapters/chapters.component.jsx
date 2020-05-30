@@ -1,13 +1,29 @@
 import React from 'react';
+
 import { isNumber } from 'util';
+import { connect } from 'react-redux'
+
+
 import './chapters.styles.scss'
 
-const Chapters = ({ chap }) => 
+import AudioPlayer from '../audio-player/audio-player.component'
+
+import { togglePlayAudio, currentPlayer } from '../../redux/player/player.action'
+
+
+const Chapters = ({ chap , togglePlayAudio, currentPlayer }) => 
 
 {
+
     const { id, url } = chap;
     return(
-    <div className="chapters" onClick = {() => alert('clicked')}>
+    <div className="chapters" onClick = {() => {
+            togglePlayAudio();
+            currentPlayer(chap)
+    }
+            
+        
+        }>
         <div className="chapter-number">
         {
         isNumber(id) ? 
@@ -24,5 +40,12 @@ const Chapters = ({ chap }) =>
 )
 }
 
+const mapDispatchToProps = dispatch => ({
+    togglePlayAudio : () => dispatch(togglePlayAudio()),
+    currentPlayer : player => dispatch(currentPlayer(player))
 
-export default Chapters;
+})
+
+
+
+export default connect(null,mapDispatchToProps)(Chapters);
