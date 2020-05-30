@@ -18,7 +18,7 @@ const BookInfoPage = ({match, returnBook, selectPlayerHidden, selectPlayerCurren
 {
     
     const data = returnBook.find(el => el.length === 1)
-    const {id, img_url, title, description, chapters, author} = data[0];
+    const {img_url, title, description, chapters, author} = data[0];
     return(
         selectPlayerHidden ? 
             <div className="book-info">
@@ -45,7 +45,7 @@ const BookInfoPage = ({match, returnBook, selectPlayerHidden, selectPlayerCurren
         
             </div>
             :
-            <AudioPlayer currentPlayer = {selectPlayerCurrent} title = {title}/>
+            <AudioPlayer current_player = {selectPlayerCurrent.url} title = {title} img_url = {img_url}/>
 )}
 
 const mapStateToProps = createStructuredSelector(

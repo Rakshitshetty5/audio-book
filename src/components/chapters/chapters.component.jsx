@@ -6,8 +6,6 @@ import { connect } from 'react-redux'
 
 import './chapters.styles.scss'
 
-import AudioPlayer from '../audio-player/audio-player.component'
-
 import { togglePlayAudio, currentPlayer } from '../../redux/player/player.action'
 
 
@@ -15,7 +13,7 @@ const Chapters = ({ chap , togglePlayAudio, currentPlayer }) =>
 
 {
 
-    const { id, url } = chap;
+    const { id } = chap;
     return(
     <div className="chapters" onClick = {() => {
             togglePlayAudio();

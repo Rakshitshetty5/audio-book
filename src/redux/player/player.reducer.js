@@ -1,5 +1,4 @@
 import { PlayerActionTypes } from './player.types';
-import { addHiddenToPlayer } from './player.utils'
 
 const INITIAL_STATE = {
     current_player : {}
