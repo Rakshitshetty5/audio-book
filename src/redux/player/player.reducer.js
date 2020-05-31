@@ -1,6 +1,7 @@
 import { PlayerActionTypes } from './player.types';
 
 const INITIAL_STATE = {
+    hidden : true,
     current_player : {}
 }
 

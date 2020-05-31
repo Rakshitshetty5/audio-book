@@ -6,25 +6,7 @@ import { connect  } from 'react-redux'
 
 import { togglePlayAudio } from '../../redux/player/player.action'
 
-
-const loadSong = () => {
-    const audioEl = document.getElementsByClassName("audio-el")[0]
-    const playBtn = document.getElementById('play');
-    if(playBtn.querySelector('i.fas').classList.contains('fa-play')){
-        playBtn.querySelector('i.fas').classList.remove('fa-play');
-        playBtn.querySelector('i.fas').classList.add('fa-pause');
-    
-
-        audioEl.play();
-    }
-    else{
-        playBtn.querySelector('i.fas').classList.remove('fa-pause');
-        playBtn.querySelector('i.fas').classList.add('fa-play');
-    
-
-        audioEl.pause();
-    }
-}
+import { loadSong } from './audio-player.utils.js'
 
 
 const AudioPlayer = ({togglePlayAudio, current_player, title, img_url}) => {
@@ -37,8 +19,11 @@ const AudioPlayer = ({togglePlayAudio, current_player, title, img_url}) => {
                     backgroundImage : `url(${img_url})`  
                 }}
 
-        />
-        <audio src={current_player} className="audio-el"></audio>
+        >
+        <span className="dot"></span>
+        </div>
+        <audio src={current_player} className="audio"></audio>
+        
         <div className='audio-player__title'>{title}</div>
         <div className="audio-player__navigation">
                 <button className="action-btn" >

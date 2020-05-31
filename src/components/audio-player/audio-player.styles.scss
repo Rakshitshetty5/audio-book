@@ -1,11 +1,13 @@
 .audio-player{
     height: 100vh;
     width: 100vw;
-    background: black;
+    background: #FF5A09;
     color: white;
     display: flex;
     flex-direction: column;
     align-items: center;
+    border-radius : 10% 10% 0% 0%;
+    
 
     .close-btn{
         padding : 1rem;
@@ -13,14 +15,29 @@
     }
 
     .audio-player__image{
-        height : 15rem;
-        width: 15rem;
+        height : 18rem;
+        width: 18rem;
         background-position: center;
         background-size: cover;
         border-radius: 50%;
         margin: 5rem;
         animation : rotate 3s linear infinite;
-        animation-play-state: running ;
+        animation-play-state: paused;
+        position: relative;
+        &.image-rotate{
+            animation-play-state: running;
+        }
+    }
+    .dot{
+        height : 2rem;
+        width :  2rem;
+        background: #FF5A09;
+        border-radius : 50%;
+        position: absolute;
+        left : 8.2rem;
+        bottom: 8rem;
+        margin: 0;
+        padding: 0;
     }
     @keyframes rotate{
         from{
@@ -41,23 +58,27 @@
         z-index: 1;
 
         .action-btn{
-            background: black;
+            background: transparent;
             border: 0;
-            color : #dfdbdf;
+            color : #393939;
             font-size : 1.3rem;
             cursor: pointer;
             padding: 0.7rem;
             margin: 0 1.2rem;
 
-            :focus {
+           
+            &:hover {
                 outline: 0;
+                border: 0;
+                background: transparent;
             }
 
             &.action-btn-big{
-                color: #cdc2d0;
+                color: #393939;
                 font-size: 2rem;
             }
         }
+       
         
         
     }
