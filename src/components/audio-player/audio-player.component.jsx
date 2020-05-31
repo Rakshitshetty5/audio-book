@@ -13,7 +13,7 @@ const AudioPlayer = ({togglePlayAudio, current_player, title, img_url}) => {
 
     return (
     <div className = "audio-player">
-        <button className= 'close-btn' onClick = {() => togglePlayAudio()}>Close</button>
+        <button className= 'close-btn' onClick = {() => togglePlayAudio()}>&#9932;</button>
         <div className="audio-player__image" 
                 style = {{
                     backgroundImage : `url(${img_url})`  

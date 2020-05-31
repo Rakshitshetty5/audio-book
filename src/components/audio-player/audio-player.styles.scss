@@ -8,10 +8,26 @@
     align-items: center;
     border-radius : 10% 10% 0% 0%;
     
+    
 
     .close-btn{
-        padding : 1rem;
+        font-size: 2.5rem;
         margin-top: 1rem;
+        background: transparent;
+        border: 0;
+        color: #393939;
+        animation: wiggle 200ms 3s 8 forwards;
+    }
+    @keyframes wiggle {
+        0%{
+            transform: rotateZ(0);
+          }
+        50%{
+            transform: rotateZ(-10deg);
+          }
+        100%{
+            transform: rotateZ(10deg);
+        } 
     }
 
     .audio-player__image{
