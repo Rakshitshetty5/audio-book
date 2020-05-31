@@ -7,12 +7,14 @@
     flex-direction: column;
     align-items: center;
     border-radius : 10% 10% 0% 0%;
+    border : 1px solid wheat;
     
     
 
     .close-btn{
         font-size: 2.5rem;
-        margin-top: 1rem;
+        margin: 1rem;
+        margin-bottom: 3rem;
         background: transparent;
         border: 0;
         color: #393939;
@@ -31,12 +33,11 @@
     }
 
     .audio-player__image{
-        height : 18rem;
-        width: 18rem;
+        height : 16rem;
+        width: 16rem;
         background-position: center;
         background-size: cover;
         border-radius: 50%;
-        margin: 5rem;
         animation : rotate 3s linear infinite;
         animation-play-state: paused;
         position: relative;
@@ -50,8 +51,8 @@
         background: #FF5A09;
         border-radius : 50%;
         position: absolute;
-        left : 8.2rem;
-        bottom: 8rem;
+        left : 7rem;
+        bottom: 7rem;
         margin: 0;
         padding: 0;
     }
@@ -68,7 +69,7 @@
         background: #393939;
         border-radius: 0.3rem;
         cursor : pointer;
-        margin : 10px 0;
+        margin : 4rem 0;
         height : 0.3rem;
         width: 90%;
         
