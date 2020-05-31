@@ -23,7 +23,9 @@ const AudioPlayer = ({togglePlayAudio, current_player, title, img_url}) => {
         <span className="dot"></span>
         </div>
         <audio src={current_player} className="audio"></audio>
-        
+        <div className="audio-player__progress-container" id="progress-container">
+                <div className="progress" id="progress"></div>
+        </div>
         <div className='audio-player__title'>{title}</div>
         <div className="audio-player__navigation">
                 <button className="action-btn" >
