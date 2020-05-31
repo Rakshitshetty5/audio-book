@@ -9,7 +9,7 @@ import playerReducer from './player/player.reducer';
 const persistConfig = {
     key: 'root',
     storage,
-    whitelist: ['audio','player']
+    whitelist: ['audio']
 } 
 
 const rootReducer = combineReducers({
