@@ -6,7 +6,9 @@ import { connect  } from 'react-redux'
 
 import { togglePlayAudio } from '../../redux/player/player.action'
 
-import { loadSong } from './audio-player.utils.js'
+import { audioManipulation } from './audio-player.utils.js'
+
+
 
 
 const AudioPlayer = ({togglePlayAudio, current_player, title, img_url}) => {
@@ -28,13 +30,13 @@ const AudioPlayer = ({togglePlayAudio, current_player, title, img_url}) => {
         </div>
         <div className='audio-player__title'>{title}</div>
         <div className="audio-player__navigation">
-                <button className="action-btn" >
+                <button className="action-btn" onClick = { () => audioManipulation()('backward') } >
                     <i className="fas fa-backward"></i>
                 </button>
-                <button id= "play" className="action-btn action-btn-big" onClick = {() => loadSong()}>
+                <button id= "play" className="action-btn action-btn-big" onClick = {() => audioManipulation()('load')}>
                     <i className="fas fa-play"></i>
                 </button>
-                <button className="action-btn">
+                <button className="action-btn" onClick = {() => audioManipulation()('forward')}>
                     <i className="fas fa-forward"></i>
                 </button>
         </div>
