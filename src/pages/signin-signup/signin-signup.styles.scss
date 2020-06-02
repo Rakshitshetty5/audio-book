@@ -1,0 +1,19 @@
+.signin-signup{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    .app-logo{
+        background: url('../../assests/logo192.png');
+        height: 8rem;
+        width: 8rem;
+        margin-top: 2rem;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+}
+
+
+
