@@ -1,5 +1,7 @@
 import React from 'react';
-import { auth, SignInWithGoogle } from "../../firebase/firebase.utils";
+
+import SignIn from '../sign-in/sign-in.component';
+import SignUp from '../sign-up/sign-up.component';
 
 import './auth-container.styles.scss'
 
@@ -16,17 +18,20 @@ class AuthContainer extends React.Component{
 render(){
     return(
         <div className="auth-container">
-            <div className="select-buttons">
+            <div className="auth-container__buttons">
                 <button onClick={() => this.setState({ a : 1})}>SignIn</button>
                 <button onClick={() => this.setState({ a : 2})}>SignUp</button>
             </div>
+            <div className="auth-container__form">
             {
                 this.state.a === 1?
-                    <button onClick={SignInWithGoogle}>Sign in with Google</button>
+                    <SignIn />
 
                 :
-                    <h1>SignUp</h1>
+                    <SignUp />
             }
+            </div>
+            
         </div>
     )
 }
