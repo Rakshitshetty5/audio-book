@@ -2,6 +2,7 @@ import React from 'react';
 
 import SignIn from '../sign-in/sign-in.component';
 import SignUp from '../sign-up/sign-up.component';
+import CustomButton from '../custom-button/custom-button.component'
 
 import './auth-container.styles.scss'
 
@@ -11,28 +12,37 @@ class AuthContainer extends React.Component{
         super();
         
         this.state = {
-            a : 1
+            button_status : 1
         }
     }
 
 render(){
     return(
         <div className="auth-container">
-            <div className="auth-container__buttons">
-                <button onClick={() => this.setState({ a : 1})}>SignIn</button>
-                <button onClick={() => this.setState({ a : 2})}>SignUp</button>
-            </div>
+                {
+                    this.state.button_status === 1 ? 
+                    <div className="auth-container__buttons">
+                        <CustomButton onClick={() => this.setState({ button_status : 1})} small highlight>SignIn</CustomButton>
+                        <CustomButton onClick={() => this.setState({ button_status : 0})} small >SignUp</CustomButton>
+                    </div>
+                    :
+                    <div className="auth-container__buttons">
+                        <CustomButton onClick={() => this.setState({ button_status : 1})} small>SignIn</CustomButton>
+                        <CustomButton onClick={() => this.setState({ button_status : 0})} small highlight>SignUp</CustomButton>
+                    </div>
+
+                }
             <div className="auth-container__form">
             {
-                this.state.a === 1?
+                this.state.button_status === 1?
                     <SignIn />
 
                 :
                     <SignUp />
             }
-            </div>
-            
         </div>
+        </div>
+            
     )
 }
 }

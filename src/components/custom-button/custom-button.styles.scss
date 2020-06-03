@@ -1,0 +1,29 @@
+.custom-button{
+    width : 15rem;
+    background: #393939;
+    border : 0;
+    height: 5vh;
+    border-radius: 1rem;
+    color: white;
+    &.google{
+        background-color: #4285f4;
+        color: white;
+        margin: 1rem;
+    
+        &:hover {
+            background-color: #357ae8;
+            border: none;
+        }
+    }
+    &.small{
+        width: 10rem;
+        border-radius: 0;
+    }
+    &.highlight{
+        background: #FF5909;
+        &:hover {
+            border: none;
+            outline: none;
+        }
+    }
+}
