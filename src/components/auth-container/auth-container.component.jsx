@@ -22,13 +22,13 @@ render(){
                 {
                     this.state.button_status === 1 ? 
                     <div className="auth-container__buttons">
-                        <CustomButton onClick={() => this.setState({ button_status : 1})} small highlight>SignIn</CustomButton>
-                        <CustomButton onClick={() => this.setState({ button_status : 0})} small >SignUp</CustomButton>
+                        <CustomButton onClick={() => this.setState({ button_status : 1})} small highlight>Signin</CustomButton>
+                        <CustomButton onClick={() => this.setState({ button_status : 0})} small >Signup</CustomButton>
                     </div>
                     :
                     <div className="auth-container__buttons">
-                        <CustomButton onClick={() => this.setState({ button_status : 1})} small>SignIn</CustomButton>
-                        <CustomButton onClick={() => this.setState({ button_status : 0})} small highlight>SignUp</CustomButton>
+                        <CustomButton onClick={() => this.setState({ button_status : 1})} small>Signin</CustomButton>
+                        <CustomButton onClick={() => this.setState({ button_status : 0})} small highlight>Signup</CustomButton>
                     </div>
 
                 }

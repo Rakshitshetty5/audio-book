@@ -5,6 +5,7 @@
     height: 5vh;
     border-radius: 1rem;
     color: white;
+    text-align: center;
     &.google{
         background-color: #4285f4;
         color: white;
@@ -18,6 +19,8 @@
     &.small{
         width: 10rem;
         border-radius: 0;
+        font-size : 1rem;
+        padding: 1.5rem;
     }
     &.highlight{
         background: #FF5909;

@@ -1,6 +1,5 @@
 .auth-container{
-    margin-top: 2rem ;
-
+    height: 80vh;
     .auth-container__buttons{
         display: flex;
         justify-content: center;
@@ -9,11 +8,11 @@
 
     
     .auth-container__form{
-        height : 60vh;
         width : 20rem;
         background: #FF5909;
         display: flex;
         flex-direction: column;
         align-items: center;
+        padding-bottom: 0.4rem;
     }
 }
