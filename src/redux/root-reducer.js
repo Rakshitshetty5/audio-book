@@ -4,6 +4,7 @@ import storage from 'redux-persist/lib/storage';
 
 import audioReducer from './audio/audio.reducer';
 import playerReducer from './player/player.reducer';
+import userReducer from './user/user.reducer'
 
 
 const persistConfig = {
@@ -14,7 +15,8 @@ const persistConfig = {
 
 const rootReducer = combineReducers({
     audio : audioReducer,
-    player : playerReducer
+    player : playerReducer,
+    user : userReducer
 })
 
 export default persistReducer(persistConfig, rootReducer) 

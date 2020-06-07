@@ -2,7 +2,7 @@
     width : 15rem;
     background: #393939;
     border : 0;
-    height: 5vh;
+    height: 3rem;
     border-radius: 1rem;
     color: white;
     text-align: center;
@@ -10,7 +10,6 @@
         background-color: #4285f4;
         color: white;
         margin: 1rem;
-    
         &:hover {
             background-color: #357ae8;
             border: none;
@@ -18,6 +17,7 @@
     }
     &.small{
         width: 10rem;
+        height: 4rem;
         border-radius: 0;
         font-size : 1rem;
         padding: 1.5rem;
