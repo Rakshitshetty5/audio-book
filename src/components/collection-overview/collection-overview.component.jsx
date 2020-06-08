@@ -6,6 +6,8 @@ import { dataGenereSelectForPreview } from '../../redux/audio/audio.selector';
 
 import CollectionPreview from '../collection-preview/collection-preview.component'
 
+import './collection-overview.styles.scss'
+
 const CollectionOverview = ({collections}) => (
 
     <div className="collection-overview">

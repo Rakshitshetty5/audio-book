@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 import './homepage.styles.scss';
 
 import { Route } from 'react-router-dom'; 
@@ -11,8 +10,7 @@ const HomePage = ( {match} ) =>
 { 
     return(
     <div className="home-page">
-       <Route exact path = {`${match.path}`} component={CollectionOverview} />
-       
+       <CollectionOverview />
     </div>
 
 )}

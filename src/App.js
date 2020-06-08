@@ -13,6 +13,7 @@ import { selectCurrentUser } from './redux/user/user.selector'
 import HomePage from './pages/homepage/homepage.component';
 import BookInfoPage from './pages/book-info/book-info.component'
 import SignInAndSignUpPage from './pages/signin-signup/signin-signup.component'
+import Header from './components/header/header.component'
 
 class App extends React.Component {
   unsubscribeFromAuth = null
@@ -48,8 +49,19 @@ class App extends React.Component {
   render(){
   return (
     <div className="App">
+      <Header />
       <Switch>
-        <Route exact path='/' component={HomePage} />
+        <Route 
+          exact 
+          path='/' 
+          render={
+              (Otherprops) => 
+              this.props.currentUser? 
+              (<HomePage {...Otherprops}/>)
+              :
+              ( <Redirect to='/auth' />)
+            }
+        />
         <Route 
           exact 
           path = '/auth'
