@@ -8,10 +8,16 @@ import { withRouter } from 'react-router-dom'
 
 const Intro = ({history, match}) => (
     <div className="intro">
-        <div className="intro-slogan">
-            Listen anytime, anywhere
+        <div className="intro-head">
+            <div className='intro-head__left'>Listen,</div>
+            <div className="intro-head__right">
+                <ul className="flip">
+                    <li>Anytime</li>
+                    <li>Anywhere</li>
+                </ul>
+            </div>
         </div>
-        <div className="intro-sub">
+        <div className="intro-subhead">
             Perfect for your commute, drive,
              workout or just before bed.
         </div>
