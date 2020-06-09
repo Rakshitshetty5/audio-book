@@ -3,7 +3,6 @@ import React from 'react';
 import './custom-button.styles.scss'
 
 const CustomButton = ({children, ...props}) => {
-    console.log(props)
     return(
     <button className={`custom-button ${props.googleSignIn ? "google" : ''} ${props.small ? 'small' : ''} ${props.highlight ? 'highlight' : ''} `}
     {...props} 

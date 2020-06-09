@@ -8,9 +8,8 @@ body{
   padding : 0rem; 
   margin: 0rem;
   height : 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  display: block;
+  
 }
 *{
   box-sizing: border-box;

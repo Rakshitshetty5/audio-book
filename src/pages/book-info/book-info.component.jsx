@@ -1,6 +1,5 @@
 import React from 'react';
 
-import { createStructuredSelector } from 'reselect';
 import { connect } from 'react-redux'
 
 import { returnBook }  from '../../redux/audio/audio.selector';
@@ -13,11 +12,10 @@ import AudioPlayer from '../../components/audio-player/audio-player.component';
 
 
 
-const BookInfoPage = ({match, returnBook, selectPlayerHidden, selectPlayerCurrent}) =>
+const BookInfoPage = ({match, collection, selectPlayerHidden, selectPlayerCurrent}) =>
 
 {
-    
-    const data = returnBook.find(el => el.length === 1)
+    const data = collection.find(el => el.length === 1)
     const {img_url, title, description, chapters, author} = data[0];
     return(
         selectPlayerHidden ? 
@@ -48,11 +46,11 @@ const BookInfoPage = ({match, returnBook, selectPlayerHidden, selectPlayerCurren
             <AudioPlayer current_player = {selectPlayerCurrent.url} title = {title} img_url = {img_url}/>
 )}
 
-const mapStateToProps = createStructuredSelector(
+const mapStateToProps = (state, ownProps) => (
     {
-        returnBook,
-        selectPlayerHidden,
-        selectPlayerCurrent
+        collection : returnBook(ownProps.match.params.id)(state),
+        selectPlayerHidden : selectPlayerHidden(state),
+        selectPlayerCurrent : selectPlayerCurrent(state)
 
     }
 )

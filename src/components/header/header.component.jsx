@@ -1,17 +1,34 @@
 import React from 'react';
 
 import {Link} from 'react-router-dom'
+import { createStructuredSelector } from 'reselect'
+import { connect } from 'react-redux'
 
 import { auth } from '../../firebase/firebase.utils';
 
-import './header.styles.scss'
 
-const Header = () => (
+import './header.styles.scss'
+import { selectCurrentUser } from '../../redux/user/user.selector';
+
+const Header = ({currentUser}) => (
     <div className="header">
         <div className="header-title">
             AudioBook
         </div>
-        <Link onClick={() => auth.signOut()} className="header-logout">Logout</Link>
+        {
+        currentUser ? 
+                <Link onClick={() => auth.signOut()} className="header-logout">
+                    Logout
+                </Link>
+                 : ''
+                
+        }
+       
     </div>
 )
-export default Header;
+
+const mapStateToProps = createStructuredSelector({
+    currentUser : selectCurrentUser
+})
+
+export default connect(mapStateToProps)(Header);

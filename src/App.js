@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 
-import { Route, Switch, Redirect } from 'react-router-dom'
+import { Route, Switch, Redirect,withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { auth, createUserProfileDocument } from './firebase/firebase.utils';
 import { createStructuredSelector } from 'reselect'
@@ -14,6 +14,7 @@ import HomePage from './pages/homepage/homepage.component';
 import BookInfoPage from './pages/book-info/book-info.component'
 import SignInAndSignUpPage from './pages/signin-signup/signin-signup.component'
 import Header from './components/header/header.component'
+import Intro from './pages/intro/intro.component'
 
 class App extends React.Component {
   unsubscribeFromAuth = null
@@ -51,9 +52,10 @@ class App extends React.Component {
     <div className="App">
       <Header />
       <Switch>
+        <Route exact path = '/' component = {Intro} />
         <Route 
           exact 
-          path='/' 
+          path='/home' 
           render={
               (Otherprops) => 
               this.props.currentUser? 
@@ -68,14 +70,16 @@ class App extends React.Component {
           render = {() => 
             this.props.currentUser ? 
             (
-              <Redirect to='/' />
+              <Redirect to='/home' />
             ) : 
             (
               <SignInAndSignUpPage />
             ) 
           }
         />
-        <Route path = {`/:id`} component = { BookInfoPage } />
+        <Route path = {`/home/:id`} render= {(props) => <BookInfoPage {...props}/> }/>
+
+        {/* <Route path = {`/:id`} component = { BookInfoPage } /> */}
       </Switch>
     </div>
   );
@@ -94,4 +98,4 @@ const mapDispatchToProps = dispatch => ({
 
 })
 
-export default connect(mapStateToProps,mapDispatchToProps)(App);
+export default withRouter(connect(mapStateToProps,mapDispatchToProps)(App));

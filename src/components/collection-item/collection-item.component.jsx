@@ -9,7 +9,7 @@ import './collection-item.styles.scss';
 const CollectionItem = ( {img_url, showBook , id, history, match} ) => {
     return(
         <div className="collection-item" onClick = {() => {
-            history.push(`${match.url}${id}`)
+            history.push(`${match.url}/${id}`)
             showBook(id)
         }
         }>
