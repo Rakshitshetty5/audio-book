@@ -61,7 +61,7 @@ class App extends React.Component {
               this.props.currentUser? 
               (<HomePage {...Otherprops}/>)
               :
-              ( <Redirect to='/auth' />)
+              ( <Redirect to='/' />)
             }
         />
         <Route 
