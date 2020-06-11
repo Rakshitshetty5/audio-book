@@ -53,9 +53,10 @@ class App extends React.Component {
       <Header />
       <Switch>
         <Route exact path = '/' component = {Intro} />
+        <Route  path = '/home' component = {HomePage}/>
         <Route 
-          exact 
-          path='/home' 
+          path='/' 
+          exact
           render={
               (Otherprops) => 
               this.props.currentUser? 
@@ -77,7 +78,7 @@ class App extends React.Component {
             ) 
           }
         />
-        <Route path = {`/home/:id`} render= {(props) => <BookInfoPage {...props}/> }/>
+        {/* <Route exact path = {`/home/:id`} render= {(props) => <BookInfoPage {...props}/> }/> */}
 
         {/* <Route path = {`/:id`} component = { BookInfoPage } /> */}
       </Switch>

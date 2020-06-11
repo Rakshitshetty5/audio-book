@@ -1,18 +1,20 @@
 import React from 'react';
 
+
 import './collection-preview.styles.scss';
 
 import CollectionItem from '../collection-item/collection-item.component'
 
 
 
-const CollectionPreview = ({genre, books, showBook}) => (
+const CollectionPreview = ({match, history, genre, books, showBook}) => (
     <div className="collection-preview">
         <div className="collection-preview__head">
             <h1 className="genre">
                 {genre.toUpperCase()}
             </h1>
-            <h4 className="extra">
+            <h4 className="extra"
+>
                 View More >
             </h4>
         </div>
@@ -30,4 +32,4 @@ const CollectionPreview = ({genre, books, showBook}) => (
 
 
 
-export default CollectionPreview
+export default CollectionPreview;
