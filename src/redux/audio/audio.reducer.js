@@ -1,9 +1,8 @@
-import AUDIO_DATA from './audio.data.js';
 
 import { AudioActionTypes } from './audio.types.js'
 
 const INITIAL_STATE = {
-    collections : AUDIO_DATA,
+    collections : null,
     book_id : null
 }
 
@@ -14,6 +13,11 @@ const audioReducer = (state=INITIAL_STATE, action) => {
             return{
                 ...state,
                 book_id : action.payload
+            }
+        case AudioActionTypes.UPDATE_COLLECTIONS : 
+            return{
+                ...state,
+                collections : action.payload
             }
 
         default : 

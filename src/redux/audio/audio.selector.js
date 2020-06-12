@@ -17,15 +17,15 @@ export const dataGenereSelect = createSelector(
 
 export const dataGenereSelectForPreview = createSelector(
     [dataGenereSelect],
-    collections => Object.keys(collections).map(key => 
-       collections[key])
+    collections => collections ? Object.keys(collections).map(key => 
+       collections[key]) : []
 )
 
 
 export const returnBook = bookIdparam => createSelector(
     [dataGenereSelectForPreview],
-    (collection) => collection.map(item => item.books).map(book => book.filter(el => el.id == bookIdparam))
- 
+    (collection) => collection ? collection.map(item => item.books).map(book => book.filter(el => el.id == bookIdparam))
+                    : null
 )
 
 

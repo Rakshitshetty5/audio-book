@@ -5,3 +5,8 @@ export const showBook = book_id => ({
     payload : book_id
 })
 
+export const updateCollections = (collectionMap) => ({
+    type: AudioActionTypes.UPDATE_COLLECTIONS,
+    payload : collectionMap
+})
+
