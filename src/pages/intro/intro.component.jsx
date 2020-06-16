@@ -5,8 +5,13 @@ import './intro.styles.scss';
 import CustomButton from '../../components/custom-button/custom-button.component'
 
 import { withRouter } from 'react-router-dom'
+import { createStructuredSelector } from 'reselect'
+import { connect } from  'react-redux'
 
-const Intro = ({history, match}) => (
+
+import { selectCurrentUser } from '../../redux/user/user.selector'
+
+const Intro = ({history, currentUser}) => (
     <div className="intro">
         <div className="intro-head">
             <div className='intro-head__left'>Listen,</div>
@@ -21,9 +26,19 @@ const Intro = ({history, match}) => (
             Perfect for your commute, drive,
              workout or just before bed.
         </div>
+        {
+        currentUser ? 
         <CustomButton highlight = {true} onClick = {() => {
+            history.push(`/home`)}}>Home</CustomButton>
+         :
+         <CustomButton highlight = {true} onClick = {() => {
             history.push(`/auth`)}}>Login/Signup</CustomButton>
+         }
     </div>
 )
 
-export default withRouter(Intro)
+const mapStateToProps = createStructuredSelector({
+    currentUser : selectCurrentUser
+})
+
+export default withRouter(connect(mapStateToProps)(Intro))

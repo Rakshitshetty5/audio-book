@@ -10,3 +10,7 @@ export const updateCollections = (collectionMap) => ({
     payload : collectionMap
 })
 
+export const returnCategoryData = category => ({
+    type : AudioActionTypes.RETURN_CATEGORY_DATA,
+    payload : category
+})

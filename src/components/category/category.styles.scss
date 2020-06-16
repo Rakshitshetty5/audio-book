@@ -1,0 +1,19 @@
+.category{
+    display: flex;
+    flex-direction: column;
+    padding-left: 1rem;
+    .category-name{
+        font-size: 2rem;
+        text-align: center;
+        font-weight: 500;
+        color : white;
+        margin-top : 1rem;
+    }
+
+    .category-books{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin-top: 0.5rem;
+    }
+
+}

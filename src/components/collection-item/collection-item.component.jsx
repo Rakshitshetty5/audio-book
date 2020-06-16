@@ -6,11 +6,11 @@ import { withRouter } from 'react-router-dom'
 
 import './collection-item.styles.scss';
 
-const CollectionItem = ( {img_url, showBook , id, history, match} ) => {
+const CollectionItem = ( {img_url, id, history, match, isCategory} ) => {
     return(
-        <div className="collection-item" onClick = {() => {
-            history.push(`${match.url}/${id}`)
-            showBook(id)
+        <div className={`collection-item ${isCategory ? "collection-category" : ''}`} onClick = {() => {
+            history.push(`home/${id}`)
+     
         }
         }>
             <div className="image" 
@@ -23,9 +23,5 @@ const CollectionItem = ( {img_url, showBook , id, history, match} ) => {
     )
 }
 
-const mapDispatchToProps = dispatch => ({
-    showBook : book_id => dispatch(showBook(book_id))
-})
 
-
-export default withRouter(connect(null, mapDispatchToProps)(CollectionItem));
+export default withRouter(CollectionItem);

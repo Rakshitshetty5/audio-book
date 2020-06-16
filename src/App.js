@@ -15,6 +15,7 @@ import BookInfoPage from './pages/book-info/book-info.component'
 import SignInAndSignUpPage from './pages/signin-signup/signin-signup.component'
 import Header from './components/header/header.component'
 import Intro from './pages/intro/intro.component'
+import Category from './components/category/category.component'
 
 class App extends React.Component {
   unsubscribeFromAuth = null
@@ -78,6 +79,7 @@ class App extends React.Component {
             ) 
           }
         />
+        <Route path = '/:categoryId' component = {Category} />
         {/* <Route exact path = {`/home/:id`} render= {(props) => <BookInfoPage {...props}/> }/> */}
 
         {/* <Route path = {`/:id`} component = { BookInfoPage } /> */}

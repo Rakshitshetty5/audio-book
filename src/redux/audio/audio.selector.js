@@ -24,9 +24,13 @@ export const dataGenereSelectForPreview = createSelector(
 
 export const returnBook = bookIdparam => createSelector(
     [dataGenereSelectForPreview],
-    (collection) => collection ? collection.map(item => item.books).map(book => book.filter(el => el.id == bookIdparam))
-                    : null
+    (collection) =>  collection ? collection.map(item => item.books).map(book => book.filter(el => el.id == bookIdparam))
+                    : null 
 )
 
+export const returnCategoryData = categoryIdParam => createSelector(
+    [dataGenereSelectForPreview],
+    collections => collections.filter(collection => collection.genre.toLowerCase() === categoryIdParam)
+)
 
 
