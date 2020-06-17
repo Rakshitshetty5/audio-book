@@ -4,16 +4,19 @@
     animation: upwards 1000ms 1s ease-in;
 
     &.collection-category{
-        margin-top: 1rem;
+        justify-self: center;
+        margin: 0;
+        margin-top : 0.5rem;
+        padding: 0;
         animation: none;
     }
 
     .image{
-    height : 18rem;
-    width : 11rem;
-    background-position: center;
-    background-size: cover; 
-    border : 1px solid grey;
+        height : 18rem;
+        width : 11rem;
+        background-position: center;
+        background-size: cover; 
+        border : 1px solid grey;
     }
     
 

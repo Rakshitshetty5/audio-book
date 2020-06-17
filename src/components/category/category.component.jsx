@@ -17,7 +17,7 @@ const Category = ({categoryData}) => {
         <div className="category-books">
         {  
             books.map((book) => (
-                <CollectionItem key = {book.id} img_url = {book.img_url} id = {book.id} isCategory={true}/>
+                <CollectionItem  key = {book.id} img_url = {book.img_url} id = {book.id} isCategory={true}/>
             ))
         }
         </div>
