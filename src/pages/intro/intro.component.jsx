@@ -28,8 +28,18 @@ const Intro = ({history, currentUser}) => (
         </div>
         {
         currentUser ? 
-        <CustomButton highlight = {true} onClick = {() => {
-            history.push(`/home`)}}>Home</CustomButton>
+            <div className="intro-chip__buttons">
+                <button class="intro-chip__button chip_highlight" onClick = {() => {
+                history.push(`/home`)}}>Home</button>
+                <button class="intro-chip__button" onClick = {() => {
+                history.push(`/romance`)}}>Romance</button>
+                <button class="intro-chip__button" onClick = {() => {
+                history.push(`/literary`)}}>Literary</button>
+                <button class="intro-chip__button" onClick = {() => {
+                history.push(`/adventure`)}}>Adventure</button>
+                <button class="intro-chip__button" onClick = {() => {
+                history.push(`/history`)}}>History</button>
+            </div>
          :
          <CustomButton highlight = {true} onClick = {() => {
             history.push(`/auth`)}}>Login/Signup</CustomButton>
