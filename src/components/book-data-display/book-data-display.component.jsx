@@ -4,11 +4,33 @@ import React from 'react';
 import './book-data-display.styles.scss';
 
 import Chapters from '../../components/chapters/chapters.component'
-import { addToFavourites } from './book-data-display.utils'
+import FavouriteButton from '../favourites/favourite.component'
 
+import { createStructuredSelector } from 'reselect'
+import { connect } from 'react-redux'
 
-const BookDataDisplay = ({data}) =>
+import { returnFavourites , selectCurrentUser} from '../../redux/user/user.selector';
+
+class BookDataDisplay extends React.Component
 {
+    constructor(){
+        super();
+        this.state = {
+            fav_array : []
+        }
+    
+    }
+
+    componentDidMount(){
+        const { favourites } = this.props;
+
+        this.setState({fav_array : favourites})
+    }
+   
+
+
+    render(){
+    const { data } = this.props;
     const {id, img_url, title, description, chapters, author} = data;
     return(
             <div className="book-info">
@@ -22,9 +44,15 @@ const BookDataDisplay = ({data}) =>
                     <div className = "book-info__head-details">
                         <div className = "book-info__head-title">{title}</div>
                         <div className = "book-info__head-author">{author}</div>
-                        <button className="book-info__head-fav" onClick={() => addToFavourites(id)}>
-                            <i className="fa fa-heart"></i>
-                        </button>
+                        {
+        
+                           this.state.fav_array.includes(id) ?
+                            <FavouriteButton change={true}  id={id} />
+                            :
+                            <FavouriteButton id={id} />
+
+                        }
+
                     </div>
 
                 </div>
@@ -38,8 +66,13 @@ const BookDataDisplay = ({data}) =>
                 </div>
         
             </div>
-)}
+    )}}
+
+const mapStateToProps = createStructuredSelector(
+    {
+        favourites : returnFavourites
+    }
+)
 
 
-
-export default BookDataDisplay
+export default connect(mapStateToProps)(BookDataDisplay)

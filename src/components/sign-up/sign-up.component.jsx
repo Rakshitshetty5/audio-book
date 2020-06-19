@@ -52,7 +52,7 @@ class SignUp extends React.Component{
                 <h1 className='sign-up__desp'>Let's get started</h1>
                 <form onSubmit = {this.handleSubmit}>
                     <FormInput 
-                        name = 'name'
+                        name = 'displayName'
                         type = 'text'
                         handleChange = {this.handleChange}
                         value = {this.state.displayName}
