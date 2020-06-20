@@ -13,24 +13,24 @@ import { returnFavourites , selectCurrentUser} from '../../redux/user/user.selec
 
 class BookDataDisplay extends React.Component
 {
-    constructor(){
-        super();
-        this.state = {
-            fav_array : []
-        }
+    // constructor(){
+    //     super();
+    //     this.state = {
+    //         fav_array : []
+    //     }
     
-    }
+    // }
 
-    componentDidMount(){
-        const { favourites } = this.props;
+    // componentDidMount(){
+    //     const { favourites } = this.props;
 
-        this.setState({fav_array : favourites})
-    }
+    //     this.setState({fav_array : favourites})
+    // }
    
 
 
     render(){
-    const { data } = this.props;
+    const { data, favourites } = this.props;
     const {id, img_url, title, description, chapters, author} = data;
     return(
             <div className="book-info">
@@ -46,7 +46,7 @@ class BookDataDisplay extends React.Component
                         <div className = "book-info__head-author">{author}</div>
                         {
         
-                           this.state.fav_array.includes(id) ?
+                           favourites.includes(id) ?
                             <FavouriteButton change={true}  id={id} />
                             :
                             <FavouriteButton id={id} />
