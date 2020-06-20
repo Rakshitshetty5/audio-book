@@ -11,26 +11,9 @@ import { connect } from 'react-redux'
 
 import { returnFavourites , selectCurrentUser} from '../../redux/user/user.selector';
 
-class BookDataDisplay extends React.Component
-{
-    // constructor(){
-    //     super();
-    //     this.state = {
-    //         fav_array : []
-    //     }
-    
-    // }
-
-    // componentDidMount(){
-    //     const { favourites } = this.props;
-
-    //     this.setState({fav_array : favourites})
-    // }
-   
 
 
-    render(){
-    const { data, favourites } = this.props;
+const BookDataDisplay = ({data, favourites}) => {
     const {id, img_url, title, description, chapters, author} = data;
     return(
             <div className="book-info">
@@ -66,7 +49,13 @@ class BookDataDisplay extends React.Component
                 </div>
         
             </div>
-    )}}
+    )
+}
+   
+
+
+
+   
 
 const mapStateToProps = createStructuredSelector(
     {
