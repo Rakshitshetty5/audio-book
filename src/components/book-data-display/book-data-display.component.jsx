@@ -8,8 +8,7 @@ import FavouriteButton from '../favourites/favourite.component'
 
 
 
-const BookDataDisplay = ({data, favourites}) => {
-    console.log(data)
+const BookDataDisplay = ({data}) => {
     const {id, img_url, title, description, chapters, author} = data;
     return(
             <div className="book-info">

@@ -16,11 +16,21 @@ const Header = ({currentUser}) => (
             AudioBook
         </div>
         {
+            currentUser ?
+                <button className="header-favourites"> <i className="fa fa-heart"></i> </button>
+            :
+                ''
+
+        }
+        {
         currentUser ? 
                 <Link onClick={() => auth.signOut()} to='/' className="header-logout">
                     Logout
                 </Link>
-                 : ''
+                 : 
+                 <Link to='/auth' className="header-logout">
+                     Login
+                </Link>
                 
         }
        

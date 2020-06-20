@@ -10,7 +10,6 @@ import { returnFavourites } from '../../redux/user/user.selector'
 import AudioPlayer from '../../components/audio-player/audio-player.component';
 import BookDataDisplay from '../../components/book-data-display/book-data-display.component'
 import WithSpinner from '../../components/with-spinner/with-spinner.component'
-import { render } from '@testing-library/react';
 
 
 const BookDataDisplayWithSpinner = WithSpinner(BookDataDisplay)

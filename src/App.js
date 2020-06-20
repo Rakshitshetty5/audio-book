@@ -11,11 +11,10 @@ import { setCurrentUser } from './redux/user/user.action'
 import { selectCurrentUser } from './redux/user/user.selector'
 
 import HomePage from './pages/homepage/homepage.component';
-import BookInfoPage from './pages/book-info/book-info.component'
 import SignInAndSignUpPage from './pages/signin-signup/signin-signup.component'
 import Header from './components/header/header.component'
 import Intro from './pages/intro/intro.component'
-import Category from './components/category/category.component'
+import Category from './pages/category/category.component'
 
 class App extends React.Component {
   unsubscribeFromAuth = null
@@ -54,7 +53,6 @@ class App extends React.Component {
       <Header />
       <Switch>
         <Route exact path = '/' component = {Intro} />
-        <Route  path = '/home' component = {HomePage}/>
         <Route 
           path='/' 
           exact
@@ -66,13 +64,15 @@ class App extends React.Component {
               ( <Redirect to='/' />)
             }
         />
+        <Route  path = '/home' component = {HomePage}/>
+
         <Route 
           exact 
           path = '/auth'
           render = {() => 
             this.props.currentUser ? 
             (
-              <Redirect to='/home' />
+              <Redirect to='/' />
             ) : 
             (
               <SignInAndSignUpPage />
@@ -80,9 +80,6 @@ class App extends React.Component {
           }
         />
         <Route path = '/:categoryId' component = {Category} />
-        {/* <Route exact path = {`/home/:id`} render= {(props) => <BookInfoPage {...props}/> }/> */}
-
-        {/* <Route path = {`/:id`} component = { BookInfoPage } /> */}
       </Switch>
     </div>
   );
