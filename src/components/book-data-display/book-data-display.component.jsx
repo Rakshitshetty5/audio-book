@@ -6,11 +6,6 @@ import './book-data-display.styles.scss';
 import Chapters from '../../components/chapters/chapters.component'
 import FavouriteButton from '../favourites/favourite.component'
 
-// import { createStructuredSelector } from 'reselect'
-// import { connect } from 'react-redux'
-// import { returnFavourites } from '../../redux/user/user.selector';
-
-
 
 
 const BookDataDisplay = ({data, favourites}) => {
@@ -30,12 +25,9 @@ const BookDataDisplay = ({data, favourites}) => {
                         <div className = "book-info__head-author">{author}</div>
                             {
                                 <FavouriteButton id={id}/> 
+                            
                             }
-
-    
-                        
-
-                    </div>
+                     </div>
 
                 </div>
                 <h2>Description</h2>
@@ -51,8 +43,5 @@ const BookDataDisplay = ({data, favourites}) => {
     )
 }
    
-
-
-
 
 export default BookDataDisplay
