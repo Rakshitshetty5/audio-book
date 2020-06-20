@@ -6,14 +6,15 @@ import './book-data-display.styles.scss';
 import Chapters from '../../components/chapters/chapters.component'
 import FavouriteButton from '../favourites/favourite.component'
 
-import { createStructuredSelector } from 'reselect'
-import { connect } from 'react-redux'
+// import { createStructuredSelector } from 'reselect'
+// import { connect } from 'react-redux'
+// import { returnFavourites } from '../../redux/user/user.selector';
 
-import { returnFavourites , selectCurrentUser} from '../../redux/user/user.selector';
 
 
 
 const BookDataDisplay = ({data, favourites}) => {
+    console.log(data)
     const {id, img_url, title, description, chapters, author} = data;
     return(
             <div className="book-info">
@@ -27,14 +28,12 @@ const BookDataDisplay = ({data, favourites}) => {
                     <div className = "book-info__head-details">
                         <div className = "book-info__head-title">{title}</div>
                         <div className = "book-info__head-author">{author}</div>
-                        {
-        
-                           favourites.includes(id) ?
-                            <FavouriteButton change={true}  id={id} />
-                            :
-                            <FavouriteButton id={id} />
+                            {
+                                <FavouriteButton id={id}/> 
+                            }
 
-                        }
+    
+                        
 
                     </div>
 
@@ -55,13 +54,5 @@ const BookDataDisplay = ({data, favourites}) => {
 
 
 
-   
 
-const mapStateToProps = createStructuredSelector(
-    {
-        favourites : returnFavourites
-    }
-)
-
-
-export default connect(mapStateToProps)(BookDataDisplay)
+export default BookDataDisplay
