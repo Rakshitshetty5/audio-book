@@ -15,6 +15,7 @@ import SignInAndSignUpPage from './pages/signin-signup/signin-signup.component'
 import Header from './components/header/header.component'
 import Intro from './pages/intro/intro.component'
 import Category from './pages/category/category.component'
+import FavouritesPage from './pages/favourites/favourites.component';
 
 class App extends React.Component {
   unsubscribeFromAuth = null
@@ -79,6 +80,7 @@ class App extends React.Component {
             ) 
           }
         />
+        <Route path = '/favourites' component = {FavouritesPage} />
         <Route path = '/:categoryId' component = {Category} />
       </Switch>
     </div>

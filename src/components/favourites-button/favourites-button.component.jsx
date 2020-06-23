@@ -1,8 +1,8 @@
 import React from 'react';
 
-import { addToFavourites } from './favourite.utils'
+import { addToFavourites } from './favourites-button.utils'
 
-import './favourite.styles.scss'
+import './favourites-button.styles.scss'
 
 import { returnFavourites, selectCurrentUser } from '../../redux/user/user.selector';
 

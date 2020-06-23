@@ -6,7 +6,8 @@ import { returnCategoryData } from '../../redux/audio/audio.selector'
 
 import { connect } from 'react-redux'
 
-import CollectionItem from '../../components/collection-item/collection-item.component'
+
+import DisplayBookVertical from '../../components/display-book-vertical/display-book-vertical.component'
 
 
 const Category = ({categoryData}) => {
@@ -14,13 +15,7 @@ const Category = ({categoryData}) => {
     return(
     <div className="category">
         <div className="category-name">{genre}</div>
-        <div className="category-books">
-        {  
-            books.map((book) => (
-                <CollectionItem  key = {book.id} img_url = {book.img_url} id = {book.id} isCategory={true}/>
-            ))
-        }
-        </div>
+        <DisplayBookVertical books = {books}/>
     </div>
 )}
 

@@ -4,7 +4,7 @@ import React from 'react';
 import './book-data-display.styles.scss';
 
 import Chapters from '../../components/chapters/chapters.component'
-import FavouriteButton from '../favourites/favourite.component'
+import FavouriteButton from '../favourites-button/favourites-button.component'
 
 
 

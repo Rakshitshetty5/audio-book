@@ -17,7 +17,7 @@ const Header = ({currentUser}) => (
         </div>
         {
             currentUser ?
-                <button className="header-favourites"> <i className="fa fa-heart"></i> </button>
+                <Link to= "/favourites" className="header-favourites"> <i className="fa fa-heart"></i> </Link>
             :
                 ''
 
@@ -38,7 +38,8 @@ const Header = ({currentUser}) => (
 )
 
 const mapStateToProps = createStructuredSelector({
-    currentUser : selectCurrentUser
+    currentUser : selectCurrentUser,
+  
 })
 
 export default connect(mapStateToProps)(Header);
