@@ -7,7 +7,7 @@ import { Route, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux'
 
 import BookInfoPage from '../../pages/book-info/book-info.component.jsx'
-import CollectionOverview from '../../components/collection-overview/collection-overview.component'
+import HomeDisplay from '../../components/home-display/home-display.component'
 import WithSpinner from '../../components/with-spinner/with-spinner.component'
 
 import { firestore, convertCollectionsSnapshotToMap } from '../../firebase/firebase.utils'
@@ -15,7 +15,7 @@ import { firestore, convertCollectionsSnapshotToMap } from '../../firebase/fireb
 import { updateCollections } from '../../redux/audio/audio.action'
 
 
-const WithSpinnerForCollectionOverview = WithSpinner(CollectionOverview);
+const WithSpinnerForHomeDisplay = WithSpinner(HomeDisplay);
 const WithSpinnerForBookInfoPage = WithSpinner(BookInfoPage);
 
 
@@ -42,8 +42,8 @@ class HomePage extends React.Component{
 
     return(
     <div className="home-page">
-       <Route exact path={`${match.path}`} render = {(props) => <WithSpinnerForCollectionOverview isLoading = {isLoading} {...props}/>} />
-       <Route path = {`${match.path}/:id`} render= {(props) => <WithSpinnerForBookInfoPage isLoading = {isLoading} {...props}/> }/>
+       <Route exact path={`${match.path}`} render = {(props) => <WithSpinnerForHomeDisplay isLoading = {this.state.isLoading} {...props}/>} />
+       <Route path = {`${match.path}/:id`} render= {(props) => <WithSpinnerForBookInfoPage isLoading = {this.state.isLoading} {...props}/> }/>
         
 
     </div>

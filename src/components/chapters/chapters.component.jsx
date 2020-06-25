@@ -28,7 +28,6 @@ const Chapters = ({ chap , togglePlayAudio, currentPlayer }) =>
             `Part ${id + 1}`
             :
             `Part ${id}`
-        //9836 128266 127911	
         }
         </div>
         <span className='wingding'>&#127911;</span>

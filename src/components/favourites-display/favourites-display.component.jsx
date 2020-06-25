@@ -4,7 +4,7 @@ import './favourites-display.styles.scss'
 
 import DisplayBookVertical from '../display-book-vertical/display-book-vertical.component'
 
-import { returnBooks } from '../../redux/audio/audio.selector'
+import { returnBooksWithRespectToId } from '../../redux/audio/audio.selector'
 
 import { connect } from 'react-redux'
 
@@ -22,7 +22,7 @@ const FavouritesDisplay = ({getBooks}) => {
 )}
 
 const mapStateToProps = (state, favourites) => ({
-    getBooks : returnBooks(favourites.favourites)(state)
+    getBooks : returnBooksWithRespectToId(favourites.favourites)(state)
 })
 
 
