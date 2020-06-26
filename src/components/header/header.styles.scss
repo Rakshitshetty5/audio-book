@@ -6,11 +6,16 @@
     justify-content: space-between;
     padding : 0.5rem;
     width: 100%;
+    position: fixed;
+    margin-top : 0px;
     z-index : 10;
     .header-title{
         color : #393939;
         font-weight: 500;
         font-size: 1.5rem;
+        text-decoration: none;
+        text-decoration-style: none;
+        
     }
     .header-favourites{
         background: transparent;

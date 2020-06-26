@@ -73,7 +73,6 @@ export const addCollectionAndDocuments = async (collectionKey, objectsToAdd) => 
         books
       };
     });
-    //console.log(transformedCollection);
       
     return transformedCollection.reduce((accumulator, collection) => {
       accumulator[collection.genre.toLowerCase()] = collection;

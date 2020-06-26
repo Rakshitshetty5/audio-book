@@ -8,7 +8,10 @@
     align-items: center;
     border-radius : 10% 10% 0% 0%;
     border : 1px solid wheat;
-    
+    position: absolute;
+    top: 0;
+    z-index : 100;
+    animation: move-upwards 300ms 0.00001s 1 ease-in;
     
 
     .close-btn{
@@ -18,7 +21,7 @@
         background: transparent;
         border: 0;
         color: #393939;
-        animation: wiggle 200ms 3s 8 forwards;
+        animation: wiggle 300ms 1s 8 forwards;
     }
     @keyframes wiggle {
         0%{
@@ -87,6 +90,7 @@
     
     .audio-player__title{
         font-size: 2rem;
+        text-align: center;
         margin-bottom: 2rem;
     }
     .audio-player__navigation{
@@ -125,6 +129,23 @@
 
    
 
+}
+@keyframes move-upwards {
+    0%{
+        transform: translateY(100%)
+      }
+    25%{
+        transform: translateY(75%);
+    }
+    50%{
+        transform: translateY(50%)
+      }
+    75%{
+        transform: translateY(25%);
+    }
+    100%{
+        transform: translateY(0%)
+    } 
 }
 
 

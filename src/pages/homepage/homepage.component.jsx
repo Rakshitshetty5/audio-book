@@ -38,7 +38,7 @@ class HomePage extends React.Component{
     }
 
     render(){
-        const { match, isLoading } = this.props;
+        const { match } = this.props;
 
     return(
     <div className="home-page">

@@ -12,9 +12,8 @@ import { selectCurrentUser } from '../../redux/user/user.selector';
 
 const Header = ({currentUser}) => (
     <div className="header">
-        <div className="header-title">
-            AudioBook
-        </div>
+        <Link to="/" className="header-title">AudioBook</Link>
+
         {
             currentUser ?
                 <Link to= "/favourites" className="header-favourites"> <i className="fa fa-heart"></i> </Link>

@@ -7,9 +7,6 @@ import './signin-signup.styles.scss'
 const SignInAndSignUpPage = () => {
     return(
         <div className="signin-signup">
-            {/* <div className="app-logo">
-
-            </div> */}
             <AuthContainer />
         </div>
     )

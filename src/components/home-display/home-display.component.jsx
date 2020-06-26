@@ -24,7 +24,7 @@ class HomeDisplay extends React.Component {
             <div>
                 <div className="search-bar">
                     <SearchBox placeholder="Search..." handleChange={this.handleChange}/>
-                    <i class="fa fa-search position-search"></i>
+                    <i className="fa fa-search position-search"></i>
         
                 </div>
                 {

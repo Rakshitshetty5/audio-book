@@ -7,7 +7,6 @@ import CollectionItem from '../collection-item/collection-item.component'
 
 
 const DisplayBookVertical = ({books}) => {
-    console.log(books)
     return(
         <div className="category-books">
         {  

@@ -24,7 +24,6 @@ class BookInfoPage extends React.Component {
         return(
             selectPlayerHidden ? 
             
-                // <BookDataDisplay data = {data[0]}/>
                 <BookDataDisplayWithSpinner isLoading = {favourites ? false : true} data = {data[0]}/>
                 :
                 <AudioPlayer current_player = {selectPlayerCurrent.url} title = {title} img_url = {img_url}/>
