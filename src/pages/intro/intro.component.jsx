@@ -41,7 +41,7 @@ const Intro = ({history, currentUser}) => (
                 history.push(`/history`)}}>History</button>
             </div>
          :
-         <CustomButton highlight = {true} onClick = {() => {
+         <CustomButton highlight = {"true"} onClick = {() => {
             history.push(`/auth`)}}>Login/Signup</CustomButton>
          }
     </div>

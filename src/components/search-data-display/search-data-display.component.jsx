@@ -27,9 +27,9 @@ const manipulate = (searchData) => {
 }
 
 
-const SearchDataDisplay = ({books}) => {
-    const searchData = books.map((book) => book.filter(el => el))
-    const data = manipulate(searchData)
+const SearchDataDisplay = ({books, bookTitle}) => {
+    const searchDataResult = books.map((book) => book.filter(el => el))
+    const data = manipulate(searchDataResult)
     return(
         
     <div className="search-data-display">
@@ -37,7 +37,7 @@ const SearchDataDisplay = ({books}) => {
             data.length > 0 ?
                 <DisplayBookVertical books={data}/> 
             :
-                <div className="search-data__notfound"><h1>Not found</h1></div>
+        <div className="search-data__notfound"><h3>Showing 0 results for "{bookTitle}"</h3></div>
         }
         
     </div>

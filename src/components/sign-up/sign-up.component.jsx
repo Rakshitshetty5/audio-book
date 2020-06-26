@@ -13,7 +13,7 @@ class SignUp extends React.Component{
             displayName : '',
             email : '',
             password : '',
-            confirmPassword : ''
+            confirmPassword : '',
         }
     }
     handleSubmit = async event => {
@@ -38,7 +38,7 @@ class SignUp extends React.Component{
                 confirmPassword : ''
             })
         }catch(error){
-            console.log(error);
+            alert(error.message)
         }
     }
 
@@ -88,6 +88,8 @@ class SignUp extends React.Component{
                     </div>
                    
                 </form>
+                
+
             </div>
         )
     }
