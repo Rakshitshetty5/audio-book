@@ -16,6 +16,7 @@ import Header from './components/header/header.component'
 import Intro from './pages/intro/intro.component'
 import Category from './pages/category/category.component'
 import FavouritesPage from './pages/favourites/favourites.component';
+import ErrorBoundary from './components/error-boundary/error-boundary.component'
 
 class App extends React.Component {
   unsubscribeFromAuth = null
@@ -52,6 +53,7 @@ class App extends React.Component {
   return (
     <div className="App">
       <Header />
+      <ErrorBoundary>
       <Switch>
         <Route exact path = '/' component = {Intro} />
         <Route 
@@ -65,8 +67,7 @@ class App extends React.Component {
               ( <Redirect to='/' />)
             }
         />
-        <Route  path = '/home' component = {HomePage}/>
-
+          <Route  path = '/home' component = {HomePage}/>
         <Route 
           exact 
           path = '/auth'
@@ -83,6 +84,7 @@ class App extends React.Component {
         <Route path = '/favourites' component = {FavouritesPage} />
         <Route path = '/:categoryId' component = {Category} />
       </Switch>
+      </ErrorBoundary>
     </div>
   );
   }
